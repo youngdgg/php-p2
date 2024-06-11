@@ -1,19 +1,24 @@
 <?php
+declare(strict_types=1);
+require_once 'ListenList.php';
+require_once 'OOP11.php'; // Assuming the Music class is in OOP11.php
 
-echo "<h1>Hallo wereld,</h1>";
-echo "Ik zit op het ";
+// Create a new ListenList object
+$kees = new ListenList();
 
-$schoolnaam = "Techniek College Rotterdam !";
+// Create Music objects
+$music1 = new Music("song one", "rock", 120);
+$music2 = new Music("ABC", "house", 2);
+$music3 = new Music("song three", "jazz", 210);
 
-echo "$schoolnaam";
-$getal1 = "<br>15<br>";
-echo "$getal1";
-//wat is het nummer van de politie
-$getal2 = "112";
-echo "$getal2";  
+// Add Music objects to the ListenList
+$kees->addMusic($music1);
+$kees->addMusic($music2);
+$kees->addMusic($music3);
 
+// Display the list of music
+$kees->displayList();
+
+// Use var_dump to display the music array
+var_dump($kees->music);
 ?>
-
-
-
-

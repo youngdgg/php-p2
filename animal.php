@@ -1,32 +1,73 @@
 <?php
+
 class Animal {
-    public $naam;
+    public string $name;
 
-    public function __construct($naam) {
-        $this->naam = $naam;
-        echo "Het dier is geboren\n";
+    public function __construct(string $name) {
+        $this->name = $name;
+        echo "Het dier is geboren.<br>";
     }
 
-    public function Info() {
-        echo "Naam: " . $this->naam . "\n";
+    public function Info(): void {
+        echo "De naam van het dier is: " . $this->name . "<br>";
     }
 
-    public function Eat() {
-        echo "Het beest eet\n";
+    public function Eat(): void {
+        echo "Het beest eet.<br>";
     }
 
-    public function Sleep() {
-        echo "Het beest slaapt\n";
+    public function Sleep(): void {
+        echo "Het beest slaapt.<br>";
     }
 }
 
-// Maak een nieuw Animal object aan
-$dier = new Animal("Leeuw");
+class Bird extends Animal {
 
-// Roep alle methods aan
-$dier->Info();
-$dier->Eat();
-$dier->Sleep();
+    public function Fly(): void {
+        echo "De vogel vliegt.<br><br>";
+    }
+}
+
+
+// Maak een nieuw Bird object aan genaamd "Eend"
+$eend = new Bird("Eend");
+
+// Roep de methoden aan
+$eend->Info();
+$eend->Eat();
+$eend->Sleep();
+$eend->Fly();
+
+class Parrot extends Bird{
+    public function Eat(): void{
+        echo "De parkiet eet alleen planten.<br><br>";
+    }
+}
+
+//maak een nieuw bird object genaamd 'parkiet'
+$parkiet = new Parrot("parkiet");
+
+//roep de methoden aan
+$parkiet->Info();
+$parkiet->Eat();
+$parkiet->Sleep();
+$parkiet->Fly();
+
+
+class Vis extends Animal {
+    public function swim(): void{
+        echo "De vis zwemt.<br>";
+    }
+}
+//maak een nieuw vis object aan genaamd "goudvis"
+$vis = new Vis("Goudvis");
+
+//roep de methoden aan
+$vis->Info();
+$vis->eat();
+$vis->sleep();
+$vis->swim();
+
 ?>
 
 
